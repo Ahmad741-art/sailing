@@ -1,1 +1,1 @@
-# sailing
+# sailing simple
