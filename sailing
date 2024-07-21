@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sailboat Drawing</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="sailboatCanvas" width="400" height="400"></canvas>
+    <script>
+        // Get the canvas element and its context
+        var canvas = document.getElementById('sailboatCanvas');
+        var ctx = canvas.getContext('2d');
+
+        // Function to draw a rectangle
+        function drawRectangle(x, y, width, height, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, width, height);
+        }
+
+        // Function to draw a triangle
+        function drawTriangle(x, y, width, height, color) {
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+            ctx.lineTo(x + width / 2, y - height);
+            ctx.lineTo(x - width / 2, y - height);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        // Draw the boat base
+        drawRectangle(100, 300, 200, 20, 'brown');
+
+        // Draw the mast
+        drawRectangle(190, 180, 20, 120, 'black');
+
+        // Draw the sails
+        drawTriangle(200, 180, 80, 100, 'white'); // Right sail
+        drawTriangle(200, 180, -80, 100, 'white'); // Left sail
+
+    </script>
+</body>
+</html>
